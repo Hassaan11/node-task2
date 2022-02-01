@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+</head>
+
+<body>
+    <%for(let o of obj) {%>
+        <h1>
+            <%= o.name%>
+        </h1>
+        <form method="post" action="/api/<%=o.name%>">
+            <%for(let i=1;i<o.field.length;i++) {%>
+
+                <label><%= o .field[i][2]%></label>
+                <input type=<%=o .field[i][1]=="integer" ? "number": "text"%> name=
+                <%=o .field[i][0] %> id=
+                    <%=o .field[i][0] %> required=
+                        <%=o .field[i][3]=="required" ? true: false%>/>
+                            <%}%>
+                                <input type="number" name="count" id="count" value=<%=o .field.length-1%> hidden>
+                                <input type="submit" name="submit" id="submit" value="Submit" />
+        </form>
+
+        <%}%>
+</body>
+
+</html>
