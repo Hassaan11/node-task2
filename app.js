@@ -25,10 +25,12 @@ app.get("/", function(req, res) {
         if (err) throw err;
         obj = JSON.parse(data);
 
-        for (let i = 0; i < obj.model.length; i++) {
-            obj1 = obj.model;
-            res.render("addForm", { obj: obj.model });
-        }
+        // for (let i = 0; i < obj.model.length; i++) {
+        //     obj1 = obj.model;
+        //     res.render("addForm", { obj: obj.model });
+        // }
+
+        res.render("addForm", { obj: obj.model });
     });
 });
 
