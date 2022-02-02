@@ -86,7 +86,7 @@ module.exports = build = () => {
                         updatedAt: false,
                     });
 
-                    // db1.sync({ force: true });
+                    db1.sync({ force: true });
                     fs.writeFile(
                         `${modelObject2[i].name}.js`,
                         `const database = require("./database.js");
@@ -107,6 +107,8 @@ module.exports = build = () => {
               }),
             ]})
             ;
+            
+            
             module.exports = ${
               modelObject2[i].name[0].toUpperCase() +
               modelObject2[i].name.substring(1)
